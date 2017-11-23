@@ -12,12 +12,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
   protected void configure(HttpSecurity http) throws Exception {
     http.authorizeRequests()
-            .antMatchers("/login").anonymous()
+            .antMatchers("/admin/login").anonymous()
             .antMatchers("/resources/**").permitAll()
             .antMatchers("/api/**").hasAuthority("USER")
             .antMatchers("/admin/**").hasAuthority("ADMIN")
             .anyRequest().authenticated()
-        .and().formLogin().loginPage("/login")
+        .and().formLogin().loginPage("/admin/login")
         .and().csrf().disable();
   }
 
