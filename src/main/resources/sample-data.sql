@@ -14,3 +14,26 @@ INSERT INTO t_user_authority (user_id,authority_id) VALUES (-1,1);
 INSERT INTO t_user_authority (user_id,authority_id) VALUES (-2,2);
 -- t_user_authority END
 
+-- t_product START
+INSERT INTO t_product (id,color,name,price,created_date) VALUES (-1,'red','max90',89.9,'2017-12-16 01:12:44');
+INSERT INTO t_product (id,color,name,price,created_date) VALUES (-2,'blue','max90',89.9,'2017-12-11 11:32:14');
+INSERT INTO t_product (id,color,name,price,created_date) VALUES (-3,'green','max90',89.9,'2017-12-06 11:32:15');
+INSERT INTO t_product (id,color,name,price,created_date) VALUES (-4,'white','max90',89.9,'2017-11-26 11:32:16');
+INSERT INTO t_product (id,color,name,price,created_date) VALUES (-5,'black','max90',89.9,'2017-11-13 16:32:17');
+INSERT INTO t_product (id,color,name,price,created_date) VALUES (-6,'yellow','max90',89.9,'2017-11-06 11:32:18');
+INSERT INTO t_product (id,color,name,price,created_date) VALUES (-7,'sky','max90',89.9,'2017-10-22 11:32:19');
+INSERT INTO t_product (id,color,name,price,created_date) VALUES (-8,'pink','max90',89.9,'2017-10-11 11:32:20');
+INSERT INTO t_product (id,color,name,price,created_date) VALUES (-9,'orange','max90',89.9,'2017-09-26 19:32:21');
+INSERT INTO t_product (id,color,name,price,created_date) VALUES (-10,'navy','max90',89.9,'2017-09-16 11:32:21');
+INSERT INTO t_product (id,color,name,price,created_date) VALUES (-11,'red','max97',99.9,'2017-09-06 11:11:21');
+INSERT INTO t_product (id,color,name,price,created_date) VALUES (-12,'blue','max97',99.9,'2017-08-30 11:32:24');
+INSERT INTO t_product (id,color,name,price,created_date) VALUES (-13,'green','max97',99.9,'2017-08-06 11:32:25');
+INSERT INTO t_product (id,color,name,price,created_date) VALUES (-14,'white','max97',99.9,'2017-07-22 11:32:26');
+INSERT INTO t_product (id,color,name,price,created_date) VALUES (-15,'black','max97',99.9,'2017-07-07 11:32:27');
+INSERT INTO t_product (id,color,name,price,created_date) VALUES (-16,'yellow','max97',99.9,'2017-07-06 11:32:28');
+INSERT INTO t_product (id,color,name,price,created_date) VALUES (-17,'sky','max97',99.9,'2017-06-26 11:32:29');
+INSERT INTO t_product (id,color,name,price,created_date) VALUES (-18,'pink','max97',99.9,'2017-06-16 11:32:30');
+INSERT INTO t_product (id,color,name,price,created_date) VALUES (-19,'orange','max97',99.9,'2017-06-08 11:32:31');
+INSERT INTO t_product (id,color,name,price,created_date) VALUES (-20,'navy','max97',99.9,'2017-06-06 11:32:32');
+-- t_product END
+
