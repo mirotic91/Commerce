@@ -5,6 +5,7 @@ import com.example.commerce.exception.UserNotFoundException;
 import com.example.commerce.exception.UserPasswordNotMatchedException;
 import com.example.commerce.exception.UsernameExistException;
 import com.example.commerce.model.Authority;
+import com.example.commerce.model.Cart;
 import com.example.commerce.model.User;
 import com.example.commerce.repository.AuthorityRepository;
 import com.example.commerce.repository.UserRepository;
@@ -14,6 +15,7 @@ import com.example.commerce.vo.ResponseVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -42,7 +44,10 @@ public class UserController {
     Authority authority = authorityRepository.findByAuthority(Authorities.USER);
     user.getAuthorities().add(authority);
     user.setPassword(passwordUtil.encodePassword(user.getPassword()));
+    userRepository.save(user);
 
+    Cart cart = new Cart(user);
+    user.setCart(cart);
     userRepository.save(user);
 
     return ResponseVO.ok();
@@ -72,7 +77,7 @@ public class UserController {
     return ResponseVO.ok();
   }
 
-  @PostMapping("/logout")
+  @GetMapping("/logout")
   public ResponseVO logout(HttpServletRequest request) {
 
     HttpSession session = request.getSession(false);
