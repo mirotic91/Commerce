@@ -1,11 +1,10 @@
 package com.example.commerce.model;
 
+import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import lombok.ToString;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,18 +12,17 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "t_user")
-@Getter
-@Setter
+@Data
 @EqualsAndHashCode(of = "id")
-@ToString
-@NoArgsConstructor
-public class User {
+@ToString(exclude = "cart")
+public class User extends AbstractEntity<Long> {
 
   @Id
   @GeneratedValue
@@ -44,6 +42,9 @@ public class User {
 
   @Column(length = 20)
   private String mobile;
+
+  @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+  private Cart cart;
 
   @ManyToMany
   @JoinTable(name = "t_user_authority", joinColumns = { @JoinColumn(name = "user_id") }, inverseJoinColumns = { @JoinColumn(name = "authority_id") })

@@ -1,10 +1,7 @@
 package com.example.commerce.model;
 
+import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.Column;
@@ -15,12 +12,9 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "t_authority")
-@Getter
-@Setter
+@Data
 @EqualsAndHashCode(of = "id")
-@ToString
-@NoArgsConstructor
-public class Authority implements GrantedAuthority {
+public class Authority extends AbstractEntity<Long> implements GrantedAuthority {
 
   @Id
   @GeneratedValue
